@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>VoteSphere India Poster</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>body{margin:0;background:#eadfce}</style></head><body>
+<div style="width:1200px;height:1760px;box-sizing:border-box;background:#FFF8EE;color:#1B1F4B;font-family:Inter,sans-serif;display:flex;flex-direction:column">
+<div style="background:#1B1F4B;color:#FFF8EE;padding:64px;border-bottom:6px solid #F28C28">
+<div style="font-size:16px;letter-spacing:4px;color:#FFC57A;text-transform:uppercase">Blockchain Research Prototype</div>
+<h1 style="margin:18px 0 12px;font:700 96px/1.05 'Playfair Display',serif">VoteSphere India</h1>
+<p style="margin:0;font-size:26px;line-height:1.4;max-width:900px">A blockchain-enabled election transparency, EPIC voter-identity verification and privacy-preserving digital ballot simulation platform.</p>
+<p style="margin:24px 0 0;font-size:15px;color:#FFC57A">Independent educational prototype. Not affiliated with the Election Commission of India. All voters, candidates and results are fictional.</p>
+</div>
+<div style="padding:48px 64px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;gap:48px">
+<div style="flex:1"><h2 style="margin:0 0 10px;font:700 34px 'Playfair Display',serif">The problem</h2><p style="margin:0;font-size:18px;line-height:1.6">Voters need proof that ballots are counted, yet ballots must stay secret and identity checks must not leak personal data. VoteSphere demonstrates how identity, ballots and audit evidence can be kept in separate, verifiable layers.</p></div>
+<div style="flex:1"><h2 style="margin:0 0 10px;font:700 34px 'Playfair Display',serif">Our approach</h2><p style="margin:0;font-size:18px;line-height:1.6">Mock electoral-roll verification, one-time voting authorizations, AES-256-GCM ballot encryption, hash commitments with unique nullifiers on a local ledger, and a tally that re-checks every commitment.</p></div>
+</div>
+<div>
+<h2 style="margin:0 0 18px;font:700 34px 'Playfair Display',serif">Journey of a ballot</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+<div style="border:1px solid #F28C28;padding:18px;background:#fff"><div style="font:700 40px 'Playfair Display',serif;color:#0B7A5F">1</div><b>Verify EPIC</b><div style="font-size:15px;margin-top:6px">Roll lookup returns one of five statuses. OCR is never proof of identity.</div></div>
+<div style="border:1px solid #F28C28;padding:18px;background:#fff"><div style="font:700 40px 'Playfair Display',serif;color:#0B7A5F">2</div><b>Login with OTP</b><div style="font-size:15px;margin-top:6px">Hashed password, rate limiting and expiring sessions.</div></div>
+<div style="border:1px solid #F28C28;padding:18px;background:#fff"><div style="font:700 40px 'Playfair Display',serif;color:#0B7A5F">3</div><b>One-time authorization</b><div style="font-size:15px;margin-top:6px">Consumed on use, so replays and duplicate votes are blocked.</div></div>
+<div style="border:1px solid #F28C28;padding:18px;background:#fff"><div style="font:700 40px 'Playfair Display',serif;color:#0B7A5F">4</div><b>Encrypt ballot</b><div style="font-size:15px;margin-top:6px">AES-GCM ciphertext. The key never sits beside the data.</div></div>
+<div style="border:1px solid #F28C28;padding:18px;background:#fff"><div style="font:700 40px 'Playfair Display',serif;color:#0B7A5F">5</div><b>Commit on chain</b><div style="font-size:15px;margin-top:6px">Only a hash commitment and nullifier are public. No names, no votes.</div></div>
+<div style="border:1px solid #F28C28;padding:18px;background:#fff"><div style="font:700 40px 'Playfair Display',serif;color:#0B7A5F">6</div><b>Tally and publish</b><div style="font-size:15px;margin-top:6px">Chain integrity, commitments, ties and seat totals are all checked.</div></div>
+</div>
+</div>
+<div>
+<h2 style="margin:0 0 18px;font:700 34px 'Playfair Display',serif">Separated storage</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;font-size:16px;line-height:1.5">
+<div style="background:#1B1F4B;color:#FFF8EE;padding:20px"><b style="color:#FFC57A">Identity store</b><br>Citizen records, hashed credentials, voted flag. Never holds a selection.</div>
+<div style="background:#1B1F4B;color:#FFF8EE;padding:20px"><b style="color:#FFC57A">Ballot store</b><br>Encrypted ballots only, with no link to a person.</div>
+<div style="background:#1B1F4B;color:#FFF8EE;padding:20px"><b style="color:#FFC57A">Ledger</b><br>Hash-chained commitments, nullifiers and election events.</div>
+</div>
+</div>
+<div style="display:flex;gap:48px">
+<div style="flex:1"><h2 style="margin:0 0 10px;font:700 34px 'Playfair Display',serif">Working features</h2><ul style="margin:0;padding-left:20px;font-size:17px;line-height:1.7"><li>EPIC verification with five statuses</li><li>Registration, OTP login, role-based admin</li><li>Candidate and party directories</li><li>Encrypted ballots, duplicate and replay blocking</li><li>Tamper detection, tie detection, seat totals</li><li>National results dashboard</li></ul></div>
+<div style="flex:1"><h2 style="margin:0 0 10px;font:700 34px 'Playfair Display',serif">Technology</h2><p style="margin:0 0 10px;font-size:17px;line-height:1.6"><b>Running prototype:</b> browser app with Web Crypto (SHA-256, AES-GCM, PBKDF2) and a local hash-chain ledger.</p><p style="margin:0;font-size:17px;line-height:1.6"><b>Target architecture:</b> React, TypeScript, Node, PostgreSQL, Prisma, Solidity, Hardhat, Ethers.js, OpenZeppelin, Argon2id.</p></div>
+</div>
+<div style="border-left:6px solid #0B7A5F;background:#fff;padding:22px 26px">
+<h2 style="margin:0 0 8px;font:700 28px 'Playfair Display',serif">Limitations</h2>
+<p style="margin:0;font-size:16px;line-height:1.6">Verification uses a mock service with synthetic records; no ECI integration exists. Tallying relies on a trusted key holder. This is a research demonstration and must never be used for a real election.</p>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:16px;border-top:2px solid #F28C28;padding-top:18px">
+<span>[TEAM MEMBERS]</span><span>[GUIDE NAME]</span><span>[INSTITUTION AND DEPARTMENT]</span>
+</div>
+</div>
+</div>
+</body></html>

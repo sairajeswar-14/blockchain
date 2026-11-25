@@ -1,0 +1,9 @@
+{
+  "name": "votesphere-india",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Blockchain-enabled election transparency and privacy-preserving ballot simulation prototype",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
